@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <title>Pangasinan University and Colleges</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/app.css">
+
+  
+</head>
+
+<body>
+  <div class="page-content">
+    <div class="wrapper">
+<div class="header">
+  <h1>Pangasinan University and Colleges</h1>
+  	<form>
+
+    	<div class="search">
+        	<!-- Create a binding between the searchString model and the text field -->
+
+        	<input type="text" v-model="searchString" placeholder="Search" />
+    	</div>
+    </form>
+
+    <button id="GPU" class="categories" @click="selectCategory('Graphics Card')">Graphics Cards</button>
+    <button id="CPU" class="categories" @click="selectCategory('Processor')">Processsors</button>
+    <button id="Mobo" class="categories" @click="selectCategory('Motherboard')">Motherboards</button>
+
+
+</div>
+</div>
+    <ul>
+        <!-- Render a li element for every entry in the items array. Notice
+             the custom search filter "searchFor". It takes the value of the
+             searchString model as an argument. -->
+             
+        <li class="epeks" v-for="i in products | searchFor searchString | filterBy selectedCategory in 'category'">
+            <a v-bind:href="i.page" style="text-decoration:none">
+            <img class="img" v-bind:src="i.image" />
+            <p>{{i.product}}</p>
+            <p>{{i.location}}</p>
+          </a>
+        </li>
+    </ul>
+  </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/app.js"></script>
+
+
+
+
+</body>
+
+</html>
