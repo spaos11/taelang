@@ -166,8 +166,9 @@ ul li p{
 }
 
 .img{
-    width: 100px;
-    height: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    width: 70%;
     }
 .epeks{
     box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
@@ -179,4 +180,10 @@ ul li p{
 .epeks:hover {
 
     transform: scale(1.1);
+}
+
+.wrapper{
+    min-width: 100px;
+    max-width: 800px;
+    width: 70%;
 }
